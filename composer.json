@@ -1,6 +1,6 @@
 {
-  "name": "hotmeteor/inertia-statamic",
-  "description": "An Inertia.js Statamic adapter ",
+  "name": "mattbromley/inertia-statamic",
+  "description": "A fork of the Inertia.js Statamic adapter by Adam Campbell",
   "type": "library",
   "license": "MIT",
   "keywords": [
@@ -14,6 +14,9 @@
     {
       "name": "Adam Campbell",
       "email": "adam@hotmeteor.com"
+    },
+    {
+      "name": "Matthew Bromley",
     }
   ],
   "require": {

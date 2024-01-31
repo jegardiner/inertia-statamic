@@ -11,6 +11,7 @@ use Inertia\Inertia;
 use JsonSerializable;
 use Statamic\Entries\Entry;
 use Statamic\Facades\Data;
+use Statamic\Facades\Structure;
 use Statamic\Fields\Value;
 use Statamic\Structures\Page;
 
@@ -28,7 +29,10 @@ class InertiaStatamic
         if (($page instanceof Page || $page instanceof Entry) && $page->template() === 'app') {
             return Inertia::render(
                 $this->buildComponentPath($page),
-                $this->buildProps($page)
+                array_merge(
+                    $this->buildProps($page),
+                    ['navigation' => $this->buildNavigation()]
+                )
             );
         }
 
@@ -85,5 +89,21 @@ class InertiaStatamic
         }
 
         return $data;
+    }
+
+    /**
+     * Builds the Navigation Items
+     *
+     * @return array
+     */
+    protected function buildNavigation()
+    {
+        $navData = Structure::findByHandle('home');
+
+        if (!$navData) {
+            return [];
+        }
+
+        return $navData->trees()->get('default')->pages()->all()->toArray();
     }
 }

@@ -114,6 +114,9 @@ Inertia\Response {#2587 ▼
 }
 ```
 
+## Navigation
+To access navigation variables as props use the prop 'navigation' to your page/layout - and call your root Navigation menu 'home'
+
 ## Credits
 
 - [Adam Campbell](https://github.com/hotmeteor)

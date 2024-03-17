@@ -88,6 +88,10 @@ class InertiaStatamic
             return $this->buildProps($data->toAugmentedArray());
         }
 
+        if(gettype($data) === 'string' && Uuid::isValid($data)) {
+            $data = Data::find($data);
+        }
+
         return $data;
     }
 

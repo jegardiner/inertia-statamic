@@ -1,6 +1,6 @@
 {
-  "name": "mattbromley/inertia-statamic",
-  "description": "A fork of the Inertia.js Statamic adapter by Adam Campbell",
+  "name": "jegardiner/inertia-statamic",
+  "description": "A fork of the Inertia.js Statamic adapter by Adam Campbell and Matthew Bromley.",
   "type": "library",
   "license": "MIT",
   "keywords": [
